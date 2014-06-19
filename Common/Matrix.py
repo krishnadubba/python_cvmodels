@@ -1,4 +1,4 @@
-% Author: Stefan Stavrev 2013
+#% Author: Stefan Stavrev 2013
 
 
 def isdiag(M):
