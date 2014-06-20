@@ -6,17 +6,18 @@ import sys
 import numpy as np
 
 def map_cat(x, alpha):
-    if not validate_cat_input(x, K):
+    if not validate_input(x):
         sys.exit()    
     
     I = len(x)
     K = len(alpha)
-    counts = np.histogram(x, K)
-    theta  = np.divide((counts - 1 + alpha), (I - K + sum(alpha)))
+    counts       = np.histogram(x, np.arange(K+1))
+    float_counts = counts[0].astype('float')
+    theta        = np.divide((float_counts - 1 + alpha), (I - K + sum(alpha)))
     return theta    
     
 # The input x must be a row or a column vector  .
-def validata_input(x):
+def validate_input(x):
     if (len(x.shape) == 1 or x.shape[0] == 1 or x.shape[1] == 1):
         return True
     else:

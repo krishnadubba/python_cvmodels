@@ -15,7 +15,7 @@ from Chap4.MLEforUnivariateNormalDist_4_1.mle_norm import mle_norm
 
 #% Generate random values from the normal distribution with
 #% mean value original_mu and standard deviation original_sig.
-original_mu = 5
+original_mu  = 5
 original_sig = 8
 #% I can be modified in order to see how MAP behaves for small vs big
 #% amounts of data.
