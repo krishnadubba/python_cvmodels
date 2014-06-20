@@ -30,7 +30,7 @@ def map_norm(x, alpha, beta, gamma, delta):
 # The input x must be a row or a column vector.
 # The parameters alpha, beta, gamma must be strictly greater than zero.
 def validate_map_input(x, alpha, beta, gamma):
-    if (x.shape[0] == 1 or x.shape[1] == 1):
+    if (len(x.shape) == 1 or x.shape[0] == 1 or x.shape[1] == 1):
         pass
     else:
         err = 'Invalid input: input must be a row or a column vector.'
@@ -38,9 +38,7 @@ def validate_map_input(x, alpha, beta, gamma):
         return False
     
     if alpha <= 0 or beta <= 0 or gamma <= 0:
-        a = 'Invalid prior parameters: alpha, beta and gamma must be';
-        b = ' strictly greater than zero.';
-        print a, b
+        print 'Invalid prior parameters: alpha, beta and gamma must be strictly greater than zero.'
         return False
     
     return True
